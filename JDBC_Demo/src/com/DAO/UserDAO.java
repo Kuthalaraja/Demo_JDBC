@@ -15,7 +15,7 @@ public class UserDAO {
 		user.id = id;
 		String query = "select account_holder_name from accounts where id="+id;
 		Class.forName("com.mysql.jdbc.Driver");
-		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/banking_app","root","Pichu@36");
+		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/banking_app","root","");
 		Statement st = con.createStatement();
 		ResultSet rs = st.executeQuery(query);
 		rs.next();
@@ -34,7 +34,7 @@ public class UserDAO {
 		try {
 		String query = "insert into  banking_app.accounts values (?,?,?)";
 		Class.forName("com.mysql.jdbc.Driver");
-		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/banking_app","root","Pichu@36");
+		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/banking_app","root","");
 		PreparedStatement st = con.prepareStatement(query);
 		st.setInt(1, u.id);
 		st.setString(2, u.account_holder_name);
